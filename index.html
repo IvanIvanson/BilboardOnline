@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iVision Board - Аренда рекламного билборда</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">
+                        <img class = "imgLogo" src="/images/logo.png" alt="logo">
+                    </span>
+                    <span>Bilboard Online</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showPage('home')">Главная</a></li>
+                    <li><a href="#" onclick="showPage('register')">Регистрация</a></li>
+                    <li><a href="#" onclick="showPage('order')">Заказ</a></li>
+                    <li><a href="#" onclick="showPage('pricing')">Расценки</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Главная страница -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <h1>iVision Board - Ваше сообщение на большом экране!</h1>
+                <p>Размещайте рекламу, поздравления, объявления или играйте в игры на нашем цифровом билборде 6x3 метра</p>
+                <a href="#" class="btn btn-accent" onclick="showPage('register')">Начать сейчас</a>
+            </div>
+            
+            <div class="card card1">
+                <h2>Как это работает?</h2>
+                <p>1. Зарегистрируйтесь в нашем приложении</p>
+                <p>2. Выберите дату и время для вашего сообщения</p>
+                <p>3. Загрузите свой контент и оплатите онлайн</p>
+                <p>4. После модерации ваше сообщение появится на экране в запланированное время!</p>
+            </div>
+            
+            <div class="card card2">
+                <h2>Преимущества</h2>
+                <p>• Яркий экран 6x3 метра с высоким разрешением</p>
+                <p>• Простое бронирование через мобильное приложение</p>
+                <p>• Размещение рекламы, поздравлений, объявлений</p>
+                <p>• Интерактивные функции: игры Тетрис и Змейка</p>
+                <p>• Гибкая система тарифов в зависимости от времени суток</p>
+            </div>
+        </div>
+
+        <!-- Страница регистрации -->
+        <div id="register" class="page">
+            <h2>Создайте аккаунт</h2>
+            <div class="card">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required placeholder="Введите ваш телефон">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" required placeholder="Создайте пароль">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Подтвердите пароль</label>
+                        <input type="password" id="confirm-password" required placeholder="Повторите пароль">
+                    </div>
+                    <button type="submit" class="btn">Зарегистрироваться</button>
+                </form>
+            </div>
+            <p>Уже есть аккаунт? <a href="#" onclick="alert('Функция входа будет реализована в полной версии')">Войдите здесь</a></p>
+        </div>
+
+        <!-- Страница заказа -->
+        <div id="order" class="page">
+            <h2>Забронируйте время на билборде</h2>
+            <div class="card">
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="order-date">Дата</label>
+                        <input type="date" id="order-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Выберите время (доступные слоты)</label>
+                        <div id="time-slots">
+                            <!-- Слоты будут добавлены через JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Продолжительность (минут)</label>
+                        <select id="duration" required>
+                            <option value="1">1 минута</option>
+                            <option value="2">2 минуты</option>
+                            <option value="5">5 минут</option>
+                            <option value="10">10 минут</option>
+                            <option value="15">15 минут</option>
+                            <option value="30">30 минут</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content-type">Тип контента</label>
+                        <select id="content-type" required>
+                            <option value="ad">Реклама</option>
+                            <option value="congrats">Поздравление</option>
+                            <option value="announcement">Объявление</option>
+                            <option value="game">Игра (Тетрис/Змейка)</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Ваше сообщение (макс. 100 символов)</label>
+                        <textarea id="message" rows="3" maxlength="100" placeholder="Введите текст для отображения на билборде"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="upload">Загрузите изображение или видео (опционально)</label>
+                        <input type="file" id="upload" accept="image/*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <p>Примерная стоимость: <span id="price-calc">0</span> руб.</p>
+                    </div>
+                    
+                    <!-- Блок предпросмотра -->
+                    <div class="preview-container">
+                        <div class="preview-title">Предварительный просмотр на билборде</div>
+                        
+                        <div class="billboard-preview">
+                            <div class="preview-content">
+                                <div id="preview-text" class="preview-text">Ваш текст появится здесь</div>
+                                <img id="preview-image" class="preview-image" style="display: none;">
+                            </div>
+                        </div>
+                        
+                        <div class="text-controls">
+                            <div class="text-control active" onclick="changeTextStyle('normal')">Обычный</div>
+                            <div class="text-control" onclick="changeTextStyle('large')">Крупный</div>
+                            <div class="text-control" onclick="changeTextStyle('bold')">Жирный</div>
+                            <div class="text-control" onclick="changeTextStyle('colorful')">Цветной</div>
+                        </div>
+                        
+                        <div class="preview-controls">
+                            <button type="button" class="btn" onclick="updatePreview()">Обновить предпросмотр</button>
+                            <button type="button" class="btn btn-accent" onclick="testAnimation()">Тест анимации</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Перейти к оплате</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Страница с расценками -->
+        <div id="pricing" class="page">
+            <h2>Расценки на аренду билборда</h2>
+            
+            <div class="card">
+                <h3>Стандартные тарифы (за минуту)</h3>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Время суток</th>
+                            <th>Часы</th>
+                            <th>Стоимость за минуту</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ночное время</td>
+                            <td>00:00 - 07:00</td>
+                            <td>50 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>Утренние часы</td>
+                            <td>07:00 - 10:00</td>
+                            <td>100 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>Дневное время</td>
+                            <td>10:00 - 18:00</td>
+                            <td>200 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>Вечерний прайм-тайм</td>
+                            <td>18:00 - 23:00</td>
+                            <td>300 руб.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="special-offer">
+                <h3>Специальное предложение для ночного времени!</h3>
+                <p>С 00:00 до 07:00 действует специальная цена - всего 50 руб./минута!</p>
+                <p>При бронировании от 30 минут - скидка 20%!</p>
+                <p>Идеально для рекламных кампаний с ограниченным бюджетом!</p>
+            </div>
+            
+            <div class="card">
+                <h3>Дополнительные услуги</h3>
+                <p>• Создание профессионального дизайна для вашей рекламы: 1000 руб.</p>
+                <p>• Модерация контента в приоритетном порядке: 500 руб.</p>
+                <p>• Повторение вашего сообщения несколько раз в течение дня: +50% к стоимости</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Biloard online. Все права защищены.</p>
+            <p>Контакты: info@bilbordonline.ru | +7 (999) 123-45-67</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
