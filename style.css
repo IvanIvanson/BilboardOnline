@@ -164,13 +164,13 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
          .card1 {
-            background: url("/images/signUp.jpg");
+            background: url("images/signUp.jpg");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: right;
         }
         .card2 {
-            background: url("/images/bilboard.jpg");
+            background: url("images/bilboard.jpg");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: right;
