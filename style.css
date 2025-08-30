@@ -89,7 +89,14 @@
             display: block;
             animation: fadeIn 0.5s;
         }
+        .more {
+            text-decoration: none;
+            border: solid var(--primary) 1px;
+            padding: 7px 10px;
+            color: var(--secondary);
+            border-radius: 10px;
             
+        }    
         
         @keyframes fadeIn {
             from { opacity: 0; }
