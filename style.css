@@ -378,13 +378,13 @@
                 align-items: center;
             }
              .card1 {
-            background: url("/images/signUp.jpg");
+            background: url("images/signUp.jpg");
             background-size: 40%;
             background-repeat: no-repeat;
             background-position: center;
         }
             .card2 {
-            background: url("/images/bilboard.jpg");
+            background: url("images/bilboard.jpg");
             background-size: 30%;
             background-repeat: no-repeat;
             background-position: top right;
